@@ -21,6 +21,10 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 app.get('/getTotalData', async (req, res) => {
   res.json({
     tradingState,
