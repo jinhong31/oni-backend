@@ -10,6 +10,7 @@ let blockTime;
 let jeetState;
 let countTime;
 let mutableTime;
+let jeetCount;
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
@@ -29,7 +30,8 @@ app.get('/getTotalData', async (req, res) => {
   res.json({
     tradingState,
     jeetState,
-    countTime
+    countTime,
+    jeetCount
   });
 })
 
@@ -40,6 +42,7 @@ const getDataFromContract = async () => {
 
   tradingState = await tokenContract.methods.tradingState().call();
   
+  jeetCount = await tokenContract.methods.jeetCount().call();
   jeetState = await tokenContract.methods.getJeetState().call();
 
   blockTime = await tokenContract.methods.getTimeStamp().call();
