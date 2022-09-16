@@ -52,7 +52,6 @@ const getDataFromContract = async () => {
   jeetPreventTime = _jeetPreventTime;
   countTime = mutableTime - Date.now();
   if(countTime < 0) countTime = 0;
-  console.log(jeetState)
 }
 
 const interval = setInterval(getDataFromContract, 1000);
