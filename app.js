@@ -13,7 +13,7 @@ let mutableTime;
 let jeetCount;
 require('dotenv').config();
 
-const middlewares = require('./middlewares');
+// const middlewares = require('./middlewares');
 
 const app = express();
 
@@ -36,7 +36,6 @@ app.get('/getTotalData', async (req, res) => {
 })
 
 const getDataFromContract = async () => {
-
   const web3 = new Web3(new Web3.providers.HttpProvider(process.env.RPC_URL));
   const tokenContract = new web3.eth.Contract(_abi, process.env.CONSTRACT_ADDRESS);
 
@@ -58,7 +57,6 @@ const getDataFromContract = async () => {
 const interval = setInterval(getDataFromContract, 1000);
 
 
-app.use(middlewares.notFound);
-app.use(middlewares.errorHandler);
-
+// app.use(middlewares.notFound);
+// app.use(middlewares.errorHandler);
 module.exports = app;
