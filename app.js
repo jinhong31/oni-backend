@@ -54,7 +54,7 @@ const getDataFromContract = async () => {
   if(countTime < 0) countTime = 0;
 }
 
-const interval = setInterval(getDataFromContract, 1000);
+// const interval = setInterval(getDataFromContract, 1000);
 
 
 // app.use(middlewares.notFound);
