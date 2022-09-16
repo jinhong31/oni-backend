@@ -13,8 +13,6 @@ let mutableTime;
 let jeetCount;
 require('dotenv').config();
 
-// const middlewares = require('./middlewares');
-
 const app = express();
 
 app.use(morgan('dev'));
@@ -54,9 +52,6 @@ const getDataFromContract = async () => {
   if(countTime < 0) countTime = 0;
 }
 
-// const interval = setInterval(getDataFromContract, 1000);
+const interval = setInterval(getDataFromContract, 1000);
 
-
-// app.use(middlewares.notFound);
-// app.use(middlewares.errorHandler);
 module.exports = app;
